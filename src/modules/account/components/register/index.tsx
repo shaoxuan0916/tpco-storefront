@@ -8,6 +8,10 @@ import { signUp } from "@modules/account/actions"
 import ErrorMessage from "@modules/checkout/components/error-message"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import Link from "next/link"
+
+import { FcGoogle } from "react-icons/fc"
+import { FaFacebookF } from "react-icons/fa"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
@@ -18,12 +22,10 @@ const Register = ({ setCurrentView }: Props) => {
 
   return (
     <div className="max-w-sm flex flex-col items-center">
-      <h1 className="text-large-semi uppercase mb-6">
-        Become a Medusa Store Member
-      </h1>
+      <h1 className="text-large-semi uppercase mb-6">Become a TPCO Member</h1>
       <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your Medusa Store Member profile, and get access to an enhanced
-        shopping experience.
+        Create your TPCO Member profile, and get access to an enhanced shopping
+        experience.
       </p>
       <form className="w-full flex flex-col" action={formAction}>
         <div className="flex flex-col w-full gap-y-2">
@@ -58,22 +60,33 @@ const Register = ({ setCurrentView }: Props) => {
         <ErrorMessage error={message} />
         <span className="text-center text-ui-fg-base text-small-regular mt-6">
           By creating an account, you agree to Medusa Store&apos;s{" "}
-          <LocalizedClientLink
-            href="/content/privacy-policy"
-            className="underline"
-          >
+          <LocalizedClientLink href="/privacy-policy" className="underline">
             Privacy Policy
           </LocalizedClientLink>{" "}
           and{" "}
-          <LocalizedClientLink
-            href="/content/terms-of-use"
-            className="underline"
-          >
+          <LocalizedClientLink href="/terms-of-use" className="underline">
             Terms of Use
           </LocalizedClientLink>
           .
         </span>
         <SubmitButton className="w-full mt-6">Join</SubmitButton>
+        {/* Google Login */}
+        <Link
+          href="http://localhost:9000/store/auth/google"
+          className="flex items-center justify-center gap-4 p-2 w-full bg-white border border-black mt-4 rounded-md"
+        >
+          <FcGoogle />
+          <p>Continue with Google</p>
+        </Link>
+
+        {/* Facebook Login */}
+        <Link
+          href="http://localhost:9000/store/auth/facebook"
+          className="flex items-center justify-center gap-4 p-2 w-full bg-white border border-black mt-4 rounded-md"
+        >
+          <FaFacebookF className="text-[#316FF6]" />
+          <p>Continue with Facebook</p>
+        </Link>
       </form>
       <span className="text-center text-ui-fg-base text-small-regular mt-6">
         Already a member?{" "}
