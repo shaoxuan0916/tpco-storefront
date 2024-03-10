@@ -59,7 +59,7 @@ const Register = ({ setCurrentView }: Props) => {
         </div>
         <ErrorMessage error={message} />
         <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Medusa Store&apos;s{" "}
+          By creating an account, you agree to TPCO Store&apos;s{" "}
           <LocalizedClientLink href="/privacy-policy" className="underline">
             Privacy Policy
           </LocalizedClientLink>{" "}

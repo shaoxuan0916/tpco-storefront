@@ -1,34 +1,16 @@
-import { Github } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
-
 const Hero = () => {
+  const images = [
+    { src: "images/banner-1.jpg", width: 1920, height: 1080 },
+    { src: "images/banner-2.jpg", width: 1920, height: 1080 },
+    { src: "images/banner-3.jpg", width: 1920, height: 1080 },
+    { src: "images/banner-4.jpg", width: 1920, height: 1080 },
+  ]
+
   return (
     <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
       <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
         {/* TODO: Hero Section */}
-        <span>
-          <Heading
-            level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
-          >
-            Ecommerce Starter Template
-          </Heading>
-          <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
-          >
-            Powered by Medusa and Next.js
-          </Heading>
-        </span>
-        <a
-          href="https://github.com/medusajs/nextjs-starter-medusa"
-          target="_blank"
-        >
-          <Button variant="secondary">
-            View on GitHub
-            <Github />
-          </Button>
-        </a>
+        Hero Section here (carousel)
       </div>
     </div>
   )

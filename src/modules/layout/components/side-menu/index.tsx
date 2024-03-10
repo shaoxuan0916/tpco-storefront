@@ -9,6 +9,8 @@ import { Fragment } from "react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CountrySelect from "../country-select"
 
+import { GiHamburgerMenu } from "react-icons/gi"
+
 const SideMenuItems = {
   Home: "/",
   Store: "/store",
@@ -18,7 +20,7 @@ const SideMenuItems = {
 }
 
 const SideMenu = ({ regions }: { regions: Region[] | null }) => {
-  const toggleState = useToggleState()
+  // const toggleState = useToggleState()
 
   return (
     <div className="h-full">
@@ -28,7 +30,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
             <>
               <div className="relative flex h-full">
                 <Popover.Button className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base">
-                  Menu
+                  <GiHamburgerMenu className="text-primary" />
                 </Popover.Button>
               </div>
 
@@ -42,8 +44,8 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                 leaveFrom="opacity-100 backdrop-blur-2xl"
                 leaveTo="opacity-0"
               >
-                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm text-ui-fg-on-color m-2 backdrop-blur-2xl">
-                  <div className="flex flex-col h-full bg-[rgba(3,7,18,0.5)] rounded-rounded justify-between p-6">
+                <Popover.Panel className="flex flex-col absolute w-full pr-4 sm:pr-0 sm:w-1/3 2xl:w-1/4 sm:min-w-min h-[calc(100vh-1rem)] z-30 inset-x-0 text-sm m-2">
+                  <div className="flex flex-col h-full bg-primary-foreground text-primary rounded-rounded justify-between p-6">
                     <div className="flex justify-end" id="xmark">
                       <button onClick={close}>
                         <XMark />
@@ -55,7 +57,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                           <li key={name}>
                             <LocalizedClientLink
                               href={href}
-                              className="text-3xl leading-10 hover:text-ui-fg-disabled"
+                              className="text-3xl leading-10 hover:text-primary/30"
                               onClick={close}
                             >
                               {name}
@@ -65,7 +67,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                       })}
                     </ul>
                     <div className="flex flex-col gap-y-6">
-                      <div
+                      {/* <div
                         className="flex justify-between"
                         onMouseEnter={toggleState.open}
                         onMouseLeave={toggleState.close}
@@ -82,10 +84,10 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                             toggleState.state ? "-rotate-90" : ""
                           )}
                         />
-                      </div>
+                      </div> */}
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
-                        reserved.
+                        © {new Date().getFullYear()} THE PARENT GLOBAL SDN BHD .
+                        All rights reserved.
                       </Text>
                     </div>
                   </div>

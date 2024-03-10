@@ -22,14 +22,15 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className="uppercase text-primary text-[20px] md:text-[24px] font-semibold"
             >
-              Medusa Store
+              The Parent Company
             </LocalizedClientLink>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
+              {/* Seach */}
               {process.env.FEATURE_SEARCH_ENABLED && (
                 <LocalizedClientLink
                   className="hover:text-ui-fg-base"
@@ -39,17 +40,21 @@ export default async function Nav() {
                   Search
                 </LocalizedClientLink>
               )}
+
+              {/* Account */}
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
+                className="text-primary hover:text-primary/80"
                 href="/account"
               >
                 Account
               </LocalizedClientLink>
             </div>
+
+            {/* Cart */}
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
+                  className="text-primary hover:text-primary/80 flex gap-2"
                   href="/cart"
                 >
                   Cart (0)

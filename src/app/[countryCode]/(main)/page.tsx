@@ -8,16 +8,15 @@ import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
-  description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+  title: "The Parent Company",
+  description: "Perfume is the art that makes memory speak",
 }
 
 const getCollectionsWithProducts = cache(
   async (
     countryCode: string
   ): Promise<ProductCollectionWithPreviews[] | null> => {
-    const { collections } = await getCollectionsList(3, 4)
+    const { collections } = await getCollectionsList()
 
     if (!collections) {
       return null
@@ -28,7 +27,7 @@ const getCollectionsWithProducts = cache(
     await Promise.all(
       collectionIds.map((id) =>
         getProductsList({
-          queryParams: { collection_id: [id] },
+          queryParams: { collection_id: [id], limit: 4 },
           countryCode,
         })
       )
@@ -69,9 +68,21 @@ export default async function Home({
   return (
     <>
       <Hero />
-      <div className="py-12">
-        <ul className="flex flex-col gap-x-6">
-          <FeaturedProducts collections={collections} region={region} />
+
+      {/* Collections */}
+      <div className="pt-12 content-container">
+        <h3 className="text-[24px] font-semibold">Collections</h3>
+        <p className="text-[16px] text-neutral-400 italic">
+          Perfume is the art that makes memory speak.
+        </p>
+      </div>
+
+      <div className="py-4">
+        <ul className="flex flex-col gap-x-4">
+          <FeaturedProducts
+            collections={collections.reverse()}
+            region={region}
+          />
         </ul>
       </div>
     </>
