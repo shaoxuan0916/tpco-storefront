@@ -26,31 +26,10 @@ export default function ProductRail({
           View all
         </InteractiveLink>
       </div>
-      <ul className="flex items-center medium:grid medium:grid-cols-4 gap-x-6 gap-y-24 overflow-x-scroll no-scrollbar">
+      <ul className="flex items-center sm:grid sm:grid-cols-4 gap-x-6 gap-y-24 overflow-x-scroll no-scrollbar">
         {products &&
           products.map((product) => (
             <>
-              <li key={product.id} className="flex-1">
-                <ProductPreview
-                  productPreview={product}
-                  region={region}
-                  isFeatured
-                />
-              </li>
-              <li key={product.id} className="flex-1">
-                <ProductPreview
-                  productPreview={product}
-                  region={region}
-                  isFeatured
-                />
-              </li>
-              <li key={product.id} className="flex-1">
-                <ProductPreview
-                  productPreview={product}
-                  region={region}
-                  isFeatured
-                />
-              </li>
               <li key={product.id} className="flex-1">
                 <ProductPreview
                   productPreview={product}

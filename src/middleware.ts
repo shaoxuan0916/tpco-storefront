@@ -58,7 +58,11 @@ async function getCountryCode(
       .get("x-vercel-ip-country")
       ?.toLowerCase()
 
+    console.log("---- vercelCountryCode ----", vercelCountryCode)
+
     const urlCountryCode = request.nextUrl.pathname.split("/")[1]?.toLowerCase()
+
+    console.log("---- urlCountryCode -----", urlCountryCode)
 
     if (urlCountryCode && regionMap.has(urlCountryCode)) {
       countryCode = urlCountryCode

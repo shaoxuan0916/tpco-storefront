@@ -1,4 +1,4 @@
-"use server"
+// "use server"
 
 import {
   ProductCategory,
@@ -392,7 +392,7 @@ export const getRegion = cache(async function (countryCode: string) {
 
     const region = countryCode
       ? regionMap.get(countryCode)
-      : regionMap.get("us")
+      : regionMap.get("my")
 
     return region
   } catch (e: any) {
