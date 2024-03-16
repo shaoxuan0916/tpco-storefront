@@ -1,6 +1,7 @@
 import { Region } from "@medusajs/medusa"
 import { notFound } from "next/navigation"
 import { NextRequest, NextResponse } from "next/server"
+import geoip from "geoip-lite"
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 const DEFAULT_REGION = process.env.NEXT_PUBLIC_DEFAULT_REGION || "my"
@@ -53,6 +54,11 @@ async function getCountryCode(
 ) {
   try {
     let countryCode
+
+    const test = request.geo
+    const test2 = request.ip
+    console.log("<<----here request geo----->>", test)
+    console.log("<<----here request ip----->>", test2)
 
     const vercelCountryCode = request.headers
       .get("x-vercel-ip-country")
