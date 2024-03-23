@@ -46,7 +46,7 @@ const Login = ({ setCurrentView }: Props) => {
 
         {/* Google Login */}
         <Link
-          href="http://localhost:9000/store/auth/google"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/store/auth/google`}
           className="flex items-center justify-center gap-4 p-2 w-full bg-white border border-black mt-4 rounded-md"
         >
           <FcGoogle />
@@ -55,7 +55,7 @@ const Login = ({ setCurrentView }: Props) => {
 
         {/* Facebook Login */}
         <Link
-          href="http://localhost:9000/store/auth/facebook"
+          href={`${process.env.NEXT_PUBLIC_BASE_URL}/store/auth/facebook`}
           className="flex items-center justify-center gap-4 p-2 w-full bg-white border border-black mt-4 rounded-md"
         >
           <FaFacebookF className="text-[#316FF6]" />
