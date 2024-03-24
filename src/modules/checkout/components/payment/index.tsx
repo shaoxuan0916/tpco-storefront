@@ -7,7 +7,7 @@ import ErrorMessage from "@modules/checkout/components/error-message"
 import { Cart } from "@medusajs/medusa"
 import { CheckCircleSolid, CreditCard } from "@medusajs/icons"
 import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui"
-import { CardElement } from "@stripe/react-stripe-js"
+import { CardElement, PaymentElement } from "@stripe/react-stripe-js"
 import { StripeCardElementOptions } from "@stripe/stripe-js"
 
 import Divider from "@modules/common/components/divider"
@@ -157,6 +157,8 @@ const Payment = ({
                   Enter your card details:
                 </Text>
 
+                {/* <PaymentElement /> */}
+
                 <CardElement
                   options={useOptions as StripeCardElementOptions}
                   onChange={(e) => {
@@ -196,17 +198,17 @@ const Payment = ({
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">
                   Payment method
                 </Text>
-                <Text className="txt-medium text-ui-fg-subtle">
+                <Text className="txt-medium text-ui-fg-subtle capitalize">
                   {paymentInfoMap[cart.payment_session.provider_id]?.title ||
                     cart.payment_session.provider_id}
                 </Text>
-                {process.env.NODE_ENV === "development" &&
+                {/* {process.env.NODE_ENV === "development" &&
                   !Object.hasOwn(
                     paymentInfoMap,
                     cart.payment_session.provider_id
                   ) && (
                     <Tooltip content="You can add a user-friendly name and icon for this payment provider in 'src/modules/checkout/components/payment/index.tsx'" />
-                  )}
+                  )} */}
               </div>
               <div className="flex flex-col w-1/3">
                 <Text className="txt-medium-plus text-ui-fg-base mb-1">

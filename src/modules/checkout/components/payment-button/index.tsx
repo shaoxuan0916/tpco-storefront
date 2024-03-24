@@ -9,6 +9,7 @@ import { placeOrder } from "@modules/checkout/actions"
 import React, { useState } from "react"
 import ErrorMessage from "../error-message"
 import Spinner from "@modules/common/icons/spinner"
+import { v4 as uuidv4 } from "uuid"
 
 type PaymentButtonProps = {
   cart: Omit<Cart, "refundable_amount" | "refunded_total">

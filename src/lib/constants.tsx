@@ -10,22 +10,10 @@ export const paymentInfoMap: Record<
   string,
   { title: string; icon: React.JSX.Element }
 > = {
-  // stripe: {
-  //   title: "Credit card",
-  //   icon: <CreditCard />,
-  // },
-  // "stripe-ideal": {
-  //   title: "iDeal",
-  //   icon: <Ideal />,
-  // },
-  // "stripe-bancontact": {
-  //   title: "Bancontact",
-  //   icon: <Bancontact />,
-  // },
-  // paypal: {
-  //   title: "PayPal",
-  //   icon: <PayPal />,
-  // },
+  stripe: {
+    title: "Cards (Accept Visa, Mastercard, and China UnionPay)",
+    icon: <CreditCard />,
+  },
   manual: {
     title: "Test payment",
     icon: <CreditCard />,
