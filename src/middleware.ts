@@ -68,16 +68,16 @@ async function getCountryCode(
 
     if (vercelCountryCode && regionMap.has(`${vercelCountryCode}`)) {
       countryCode = vercelCountryCode
-      // console.log("use vercel country code: ", vercelCountryCode)
+      console.log("use vercel country code: ", vercelCountryCode)
     } else if (urlCountryCode && regionMap.has(urlCountryCode)) {
       countryCode = urlCountryCode
-      // console.log("use url country code: ", urlCountryCode)
+      console.log("use url country code: ", urlCountryCode)
     } else if (regionMap.has(DEFAULT_REGION)) {
       countryCode = DEFAULT_REGION
-      // console.log("use url country code: ", DEFAULT_REGION)
+      console.log("use default country code: ", DEFAULT_REGION)
     } else if (regionMap.keys().next().value) {
       countryCode = regionMap.keys().next().value
-      // console.log("use next country code: ")
+      console.log("use next country code: ")
     }
 
     return countryCode
