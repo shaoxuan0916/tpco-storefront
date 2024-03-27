@@ -6,6 +6,7 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
+import Head from "next/head"
 
 export const metadata: Metadata = {
   title: "The Parent Company",
@@ -69,6 +70,12 @@ export default async function Home({
 
   return (
     <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="GlJnf6soxXn41IE-YlKbusIKoeX_pS8jGoYA2REvs-M"
+        />
+      </Head>
       <Hero />
 
       {/* Collections */}
