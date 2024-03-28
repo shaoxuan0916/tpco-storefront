@@ -9,8 +9,15 @@ import { cache } from "react"
 import Head from "next/head"
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "The Parent Company",
   description: "Perfume is the art that makes memory speak",
+  verification: {
+    google: "GlJnf6soxXn41IE-YlKbusIKoeX_pS8jGoYA2REvs-M",
+  },
+  other: {
+    "google-site-verification": "GlJnf6soxXn41IE-YlKbusIKoeX_pS8jGoYA2REvs-M",
+  },
 }
 
 const getCollectionsWithProducts = cache(
